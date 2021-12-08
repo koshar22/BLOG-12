@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    margin: 25px 80px;
+    margin: 25px 50px;
 }
 
 nav {
@@ -49,6 +49,10 @@ nav {
             }
         }
     }
+    .search {
+        color: $grey;
+        display: none;
+    }
     .bars {
         display: none;
         font-size: larger;
@@ -84,26 +88,43 @@ nav {
                 margin-right: 25px;
             }  
         } 
-        .more > a {
-            color: $grey;
-            // border-bottom: 2px solid rgb(228, 224, 224);
-            // padding-bottom: 15px;
+        .more  {
+            color: #fff;
             font-size: larger;
             display: none;
+            position: absolute;
+            right: 0px;
+            top: 75px;
+            padding: 10px 15px 10px 10px;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+            background-color: $main;
+            z-index: 3;
         }
     }
     .right > .ii {
         color: $grey;
         display: none;
     }
+    
+    .right > .child2 {
+        a {
+            i {
+                padding-right: 15px;
+            }
+        }
+    }
 }
 
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 70px;
     margin-top: 30px;
+    padding-left: 30px;
     .content_l {
-        width: 75%;
-        padding: 0 100px;
+        // width: 75%;
+        // padding: 0 100px;
         .first {
             .mini {
                 display: flex;
@@ -137,7 +158,7 @@ nav {
                     margin-bottom: 30px;
                 }
                 .button {
-                    margin-top: 10px;
+                    // margin-top: 10px;
                     a{
                         background-color: $main;
                         padding: 10px 35px;
@@ -158,22 +179,25 @@ nav {
         }
     }
     .content_r {
-        width: 25%;
+        // width: 25%;
         p {
             color: $grey;
         }
         input {
             padding: 10px 20px;
-            margin: 15px 0 25px ;
-            border:  2px solid rebeccapurple;
+            margin: 15px 0;
+            // border:  2px solid $main;
             font-weight: bold;
+            // color: $main;
         }
         input:focus {
-            background-color: rgb(228, 224, 224);
-            border: 2px solid red;
+            // background-color: $main;
+            border: 2px solid $main;
+            box-shadow: 0 0 7px .15px $main;
+            outline: none;
         }
         .buttonn {
-            margin-bottom: 35px;
+            margin: 15px 0 35px;
             a {
             border: 2px solid $main;
             border-radius: 5px;
@@ -222,15 +246,9 @@ nav {
 }
 
 @media (max-width: 1030px) {
-    .container {
-        margin: 20px 25px;
-    }
-    
-    .content {
-        // display: block;
-        .content_l {
-            padding: 0 30px 0 50px;
-            width: 100%;
+    nav > .links, .main{
+        &:hover {
+            pointer-events: none;
         }
     }
 }
@@ -241,17 +259,6 @@ nav {
     }
     .content {
         display: block;
-        .content_l {
-            padding: 0 30px;
-            width: 100%;
-        }
-        .content_r {
-            // margin: auto;
-            // width: 50%; 
-            padding-left: 30px;
-            width: 75%;
-
-        }
     }
 }
 
@@ -265,14 +272,32 @@ nav {
             width: 100%;
             // display: none;
             margin-bottom: 20px;
-            transition: ease-in-out .7s;
+            transition: ease-in-out .5s;
             z-index: 1;
+            padding: 20px 0;
             a {
             display: block;
             padding: 10px;
             color: #fff;
             }
+        }
+        .linkss {
+            position: absolute;
+            top: 65px;
+            left: 0px;
+            // margin-left: 5px;
+            a{
+                color: $main;
+                background-color: transparent;
+                padding: 0px;
+                // margin: 0px;
+            }
         } 
+        .search {
+            display: block;
+            right: 65px;
+            position: absolute;
+        }
         .bars {
             display: block;
         }
@@ -304,19 +329,20 @@ nav {
                 transition: ease-in-out .5s;
                 background-color: $main;
                 z-index: 2;
-                width: 100%;
-                padding-left: 10px;
+                width: 90%;
+                padding: 10px;
                 .child {
                     a {
+                        padding-top: 15px;
                         border-bottom: none;
                         color: #fff;
                     }
                 }
             }  
-            .more > a{
+            .more {
                 display: block;
             }
-    }
+        }
     }
 }
 
@@ -325,22 +351,7 @@ nav {
     .content > .content_l > .second > .xyz {
         display: none;
     }
-}
-
-@media (max-width: 450px) {
-    nav {
-        .linkss {
-            a {
-                padding: 6px 7px;
-                margin-left: 0;
-                font-size: x-small;
-                color: #fff;
-            }
-        }
-    }
     .content {
-        .content_l {
-            padding: 0px;
-        }
+        padding: 0px;
     }
 }

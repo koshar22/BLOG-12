@@ -20,12 +20,14 @@ let isOPen = false
 more.addEventListener('click', () => {
     if(isOPen) {
         child1.style.left = '-100%';
-        more.style.color = '$grey';
+        more.style.backgroundColor = '#53BD95';
+        more.style.color = '#fff';
         isOPen = false;
     }
     else {
         child1.style.left = '0px';
-        more.style.color = '$main';
+        more.style.backgroundColor = '#fff';
+        more.style.color = '#53BD95';
         isOPen = true;
     }
 })
