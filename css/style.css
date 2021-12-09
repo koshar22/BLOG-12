@@ -2,6 +2,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Acme";
+  background-color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 body a {
   text-decoration: none;
@@ -29,6 +34,9 @@ nav .logo {
 }
 nav .logo a {
   color: #53BD95;
+}
+nav .logo a:hover {
+  color: #368d6c;
 }
 nav .links a {
   padding-right: 20px;
@@ -231,7 +239,14 @@ nav .bars {
 }
 
 @media (max-width: 1030px) {
-  nav > .links:hover, .main:hover {
+  nav .links:hover {
+    pointer-events: none;
+  }
+  nav .linkss:hover {
+    pointer-events: none;
+  }
+
+  .main .left .child1:hover {
     pointer-events: none;
   }
 }
@@ -252,8 +267,8 @@ nav .bars {
     position: absolute;
     width: 100%;
     margin-bottom: 20px;
-    -webkit-transition: ease-in-out 0.5s;
-    transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
     z-index: 1;
     padding: 20px 0;
   }
@@ -261,16 +276,6 @@ nav .bars {
     display: block;
     padding: 10px;
     color: #fff;
-  }
-  nav .linkss {
-    position: absolute;
-    top: 65px;
-    left: 0px;
-  }
-  nav .linkss a {
-    color: #53BD95;
-    background-color: transparent;
-    padding: 0px;
   }
   nav .search {
     display: block;
@@ -289,6 +294,17 @@ nav .bars {
   }
 }
 @media (max-width: 700px) {
+  nav .linkss {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+  }
+  nav .linkss a {
+    color: #53BD95;
+    background-color: transparent;
+    padding: 0px;
+  }
+
   .main {
     padding: 0 40px;
     border-bottom: none;
@@ -298,11 +314,11 @@ nav .bars {
     top: 120px;
     left: -100%;
     position: absolute;
-    -webkit-transition: ease-in-out 0.5s;
-    transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.4s;
     background-color: #53BD95;
     z-index: 2;
-    width: 90%;
+    width: 95%;
     padding: 10px;
   }
   .main .left .child1 .child a {
