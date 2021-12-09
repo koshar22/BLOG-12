@@ -10,7 +10,7 @@ bars.addEventListener('click', () => {
         isOpen = false;
     }
     else {
-        links.style.top = '70px';
+        links.style.top = '65px';
         body.style.backgroundColor = '#eee';
         isOpen = true;
     }
